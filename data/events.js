@@ -1,5 +1,22 @@
 var events = [
    {
+    'id': '95',
+    'type': 'Vilnius JUG',
+    'date': '2026-11-17',
+    'time': '18:30',
+    'registration': {
+      'title': 'Eventbrite',
+      'url': 'https://vilniusjug95.eventbrite.com'
+    },
+    'venue': {
+      'title': 'Wix Vilnius office',
+      'map_url': 'https://goo.gl/maps/cRSfKnauH4F2'
+    },
+    'talks': [
+      {'author': 'Bruno Souza', 'title': '7 Ways You Can Build an Amazing Dev Career in the AI Era'}
+    ]
+   },
+   {
     'id': '94',
     'type': 'Vilnius JUG',
     'date': '2026-10-22',
