@@ -59,6 +59,29 @@ header p {
   width: 40px;
 }
 
+/* Upcoming events */
+
+.events tr.upcoming {
+  background: #fff6d6;
+  font-weight: bold;
+}
+
+/* Blend the icon's white background into the highlight */
+.events tr.upcoming img {
+  mix-blend-mode: multiply;
+}
+
+.badge {
+  margin-left: 6px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: #e8a200;
+  color: #fff;
+  font-size: 0.75em;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
 /* Year picker */
 
 .years {

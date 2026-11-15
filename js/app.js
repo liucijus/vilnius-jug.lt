@@ -11,12 +11,14 @@ app.controller('EventsController', function ($scope) {
   var now = new Date();
   var currentDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
-  var upcoming = events.filter(function(event) {
+  function isUpcoming(event) {
     return Date.parse(event.date) >= currentDate;
-  });
+  }
+
+  var upcoming = events.filter(isUpcoming);
 
   var past = events.filter(function(event) {
-    return Date.parse(event.date) < currentDate;
+    return !isUpcoming(event);
   });
 
   // Group events by year, newest year first: [{year: '2026', events: [...]}, ...]
@@ -33,6 +35,8 @@ app.controller('EventsController', function ($scope) {
 
   // Show the newest year by default
   $scope.selected = $scope.years[0];
+
+  $scope.isUpcoming = isUpcoming;
 
   $scope.select = function(group) {
     $scope.selected = group;
