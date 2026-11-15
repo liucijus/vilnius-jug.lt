@@ -18,8 +18,22 @@
   </p>
 </header>
 
+<section class="updates">
+  <h2>Get notified about new events</h2>
+  <p>
+    Join the <a href="https://groups.google.com/g/vilnius-jug">Vilnius JUG Google Group</a>
+    to hear about new events as soon as they are announced.
+  </p>
+</section>
+
 <main ng-app="vilniusJugApp" ng-controller="EventsController">
   <h2>Vilnius JUG Events</h2>
+
+  <nav class="years">
+    <button ng-repeat="group in years"
+            ng-click="select(group)"
+            ng-class="{selected: group === selected}">{{group.year}}</button>
+  </nav>
 
   <table class="events">
     <thead>
@@ -31,9 +45,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="event in events">
+      <tr ng-repeat="event in selected.events" ng-class="{upcoming: isUpcoming(event)}">
         <td class="icon"><img ng-if="icon(event)" ng-src="{{icon(event)}}" alt="{{event.type}}"></td>
-        <td>{{event.date}} {{event.time}}</td>
+        <td>
+          {{event.date}} {{event.time}}
+          <span class="badge" ng-if="isUpcoming(event)">Upcoming</span>
+        </td>
         <td><a href="{{event.venue.map_url}}">{{event.venue.title}}</a></td>
         <td><a href="{{event.registration.url}}">{{event.registration.title}}</a></td>
       </tr>
