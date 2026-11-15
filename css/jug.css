@@ -1,44 +1,71 @@
-.header {
-  text-align: center;
-  font-family: sans-serif;
-}
+/* Base */
 
-.header > a {
-  text-decoration: none;
+body {
+  margin: 0 auto;
+  padding: 0 16px;
+  max-width: 1040px;
+  font-family: sans-serif;
+  line-height: 1.5;
+  text-align: center;
 }
 
 img {
-  vertical-align: middle;;
-}
-
-.title {
   vertical-align: middle;
-  text-align: center;
-  font-family: monospace;
-  font-size: xx-large;
 }
 
-.description {
-  text-align: center;
-  width: 600px;
-  font-family: sans-serif;
+/* Header */
+
+header {
+  padding: 32px 0;
 }
 
-.center {
-  text-align: center;
-  margin: auto;
+header p {
+  max-width: 600px;
+  margin: 24px auto 0;
 }
 
-.row {
-  padding-top: 10px;
-  max-width: 1040px;
-  margin: 0 auto;
-}
-
-.column {
-  width: 100%;
-}
+/* Events table */
 
 .events {
   width: 100%;
+  border-collapse: collapse;
+}
+
+.events th,
+.events td {
+  padding: 6px 8px;
+}
+
+.events .icon {
+  width: 40px;
+}
+
+/* Footer */
+
+footer {
+  padding: 32px 0;
+}
+
+/* Phones: show each event as a small card instead of a table row */
+
+@media (max-width: 600px) {
+  .events thead {
+    display: none;
+  }
+
+  .events tr {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+
+  .events td {
+    padding: 2px 8px;
+  }
+
+  .events .icon {
+    grid-row: span 3;
+  }
 }
