@@ -1,81 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Vilnius JUG (Java User Group) - Vilnius Java & JVM enthusiasts">
   <title>Vilnius JUG</title>
   <link rel="stylesheet" href="css/jug.css">
-  <link rel="icon" type="image/x-icon" href="jug.png"/>
+  <link rel="icon" type="image/png" href="jug.png">
 </head>
 <body>
-<div class="wrapper">
-  <div class="title">
-    <img src="jug_vilnius-02-120.jpg" alt="">
-  </div>
-</div>
-<br/>
 
-<br/>
-
-<div class="center">
-  <div class="description center">
+<header>
+  <img class="logo" src="jug_vilnius-02-120.jpg" alt="Vilnius JUG logo">
+  <p>
     Vilnius JUG is a community of passionate Java developers who love to
     share their experiences and discoveries with other professionals.
-  </div>
-  <br>
-</div>
+  </p>
+</header>
 
-<div class="row" ng-app='vilniusJugApp' ng-controller="EventsController">
-  <div class="column">
-    <h3 class="center">Vilnius JUG Events</h3>
-    <br/>
+<main ng-app="vilniusJugApp" ng-controller="EventsController">
+  <h2>Vilnius JUG Events</h2>
 
-    <table class="center events">
+  <table class="events">
+    <thead>
       <tr>
-        <td></td>
-        <td>Date</td>
-        <td>Venue</td>
-        <td>Registration link</td>
+        <th></th>
+        <th>Date</th>
+        <th>Venue</th>
+        <th>Registration link</th>
       </tr>
-      <tr ng-repeat="event in upcoming">
-        <td>
-          <img src="icons/event_types/java.png" ng-if="event.type == 'Vilnius JUG' || event.type == 'Vilnius JUG Conf'">
-          <img src="icons/event_types/scala.png" ng-if="event.type == 'Vilnius Scala'">
-          <img src="icons/event_types/clojure.png" ng-if="event.type == 'Vilnius Clojure'">
-        </td>
+    </thead>
+    <tbody>
+      <tr ng-repeat="event in events">
+        <td class="icon"><img ng-if="icon(event)" ng-src="{{icon(event)}}" alt="{{event.type}}"></td>
         <td>{{event.date}} {{event.time}}</td>
         <td><a href="{{event.venue.map_url}}">{{event.venue.title}}</a></td>
         <td><a href="{{event.registration.url}}">{{event.registration.title}}</a></td>
       </tr>
+    </tbody>
+  </table>
+</main>
 
-      <tr ng-repeat="event in past">
-        <td>
-          <img src="icons/event_types/java.png" ng-if="event.type == 'Vilnius JUG' || event.type == 'Vilnius JUG Conf'">
-          <img src="icons/event_types/scala.png" ng-if="event.type == 'Vilnius Scala'">
-          <img src="icons/event_types/clojure.png" ng-if="event.type == 'Vilnius Clojure'">
-        </td>
-        <td>{{event.date}} {{event.time}}</td>
-        <td><a href="{{event.venue.map_url}}">{{event.venue.title}}</a></td>
-        <td><a href="{{event.registration.url}}">{{event.registration.title}}</a></td>
-      </tr>
-    </table>
-  </div>
-</div>
+<footer>
+  <h3>Other dev communities</h3>
+  <p><a href="https://usergroups.lt/">User groups calendar</a></p>
 
-<div class="center">
-  <h4>Other dev communities</h4>
-  <a href="https://usergroups.lt/">User groups calendar</a>
-  <br>
-  <br>
-  <a
-    href="mailto:&#108;&#101;&#097;&#100;&#101;&#114;&#115;&#064;&#118;&#105;&#108;&#110;&#105;&#117;&#115;&#045;&#106;&#117;&#103;&#046;&#108;&#116;">
-    &#108;&#101;&#097;&#100;&#101;&#114;&#115;&#064;&#118;&#105;&#108;&#110;&#105;&#117;&#115;&#045;&#106;&#117;&#103;&#046;&#108;&#116;</a>
-  <br>
-  +&#051;&#055;&#048;&#032;&#054;&#049;&#053;&#032;&#054;&#048;&#052;&#053;&#049;,&#032;+&#051;&#055;&#048;&#032;&#054;&#056;&#049;&#032;&#052;&#049;&#050;&#056;&#048;
-</div>
+  <p>
+    <a href="mailto:&#108;&#101;&#097;&#100;&#101;&#114;&#115;&#064;&#118;&#105;&#108;&#110;&#105;&#117;&#115;&#045;&#106;&#117;&#103;&#046;&#108;&#116;">&#108;&#101;&#097;&#100;&#101;&#114;&#115;&#064;&#118;&#105;&#108;&#110;&#105;&#117;&#115;&#045;&#106;&#117;&#103;&#046;&#108;&#116;</a>
+    <br>
+    +&#051;&#055;&#048;&#032;&#054;&#049;&#053;&#032;&#054;&#048;&#052;&#053;&#049;,&#032;+&#051;&#055;&#048;&#032;&#054;&#056;&#049;&#032;&#052;&#049;&#050;&#056;&#048;
+  </p>
+</footer>
+
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
 <script src="data/events.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>
-
