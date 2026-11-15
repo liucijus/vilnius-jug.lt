@@ -195,6 +195,21 @@ var events = [
     ]
    },
    {
+    'id': 'conf-2024',
+    'type': 'Vilnius JUG Conf',
+    'date': '2024-06-18',
+    'time': '13:00',
+    'registration': {
+      'title': 'Vilnius JUG Conf',
+      'url': 'https://conf.vilnius-jug.lt'
+    },
+    'venue': {
+      'title': 'Wix Vilnius office',
+      'map_url': 'https://goo.gl/maps/cRSfKnauH4F2'
+    },
+    'talks': []
+   },
+   {
     'id': '84',
     'type': 'Vilnius JUG',
     'date': '2024-04-04',

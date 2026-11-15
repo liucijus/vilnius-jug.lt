@@ -29,9 +29,6 @@
   <div class="column">
     <h3 class="center">Vilnius JUG Events</h3>
     <br/>
-    <div>
-	    <div class="center conf"><a href="https://conf.vilnius-jug.lt">2024, June 18 Vilnius JUG Conf</a></div>
-    </div>
 
     <table class="center events">
       <tr>
@@ -42,7 +39,7 @@
       </tr>
       <tr ng-repeat="event in upcoming">
         <td>
-          <img src="icons/event_types/java.png" ng-if="event.type == 'Vilnius JUG'">
+          <img src="icons/event_types/java.png" ng-if="event.type == 'Vilnius JUG' || event.type == 'Vilnius JUG Conf'">
           <img src="icons/event_types/scala.png" ng-if="event.type == 'Vilnius Scala'">
           <img src="icons/event_types/clojure.png" ng-if="event.type == 'Vilnius Clojure'">
         </td>
@@ -53,7 +50,7 @@
 
       <tr ng-repeat="event in past">
         <td>
-          <img src="icons/event_types/java.png" ng-if="event.type == 'Vilnius JUG'">
+          <img src="icons/event_types/java.png" ng-if="event.type == 'Vilnius JUG' || event.type == 'Vilnius JUG Conf'">
           <img src="icons/event_types/scala.png" ng-if="event.type == 'Vilnius Scala'">
           <img src="icons/event_types/clojure.png" ng-if="event.type == 'Vilnius Clojure'">
         </td>
