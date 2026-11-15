@@ -59,6 +59,31 @@ header p {
   width: 40px;
 }
 
+/* Year picker */
+
+.years {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.years button {
+  padding: 4px 12px;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.years button.selected {
+  border-color: #333;
+  background: #333;
+  color: #fff;
+}
+
 /* Footer */
 
 footer {

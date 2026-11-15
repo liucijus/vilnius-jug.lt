@@ -29,6 +29,12 @@
 <main ng-app="vilniusJugApp" ng-controller="EventsController">
   <h2>Vilnius JUG Events</h2>
 
+  <nav class="years">
+    <button ng-repeat="group in years"
+            ng-click="select(group)"
+            ng-class="{selected: group === selected}">{{group.year}}</button>
+  </nav>
+
   <table class="events">
     <thead>
       <tr>
@@ -39,7 +45,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="event in events">
+      <tr ng-repeat="event in selected.events">
         <td class="icon"><img ng-if="icon(event)" ng-src="{{icon(event)}}" alt="{{event.type}}"></td>
         <td>{{event.date}} {{event.time}}</td>
         <td><a href="{{event.venue.map_url}}">{{event.venue.title}}</a></td>
