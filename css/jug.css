@@ -37,37 +37,14 @@ img {
 
 .row {
   padding-top: 10px;
-  width: 1040px;
-  height: 2000px;
+  max-width: 1040px;
   margin: 0 auto;
-  clear: both;
 }
 
 .column {
-  width: 65%;
-  float: left;
-  display: block;
+  width: 100%;
 }
 
-.column-right {
-  width: 35%;
-  float: left;
-  display: block;
-}
-
-.logo-box {
-  width: 200px;
-  height: 80px;
-  position: relative;
-}
-
-.logo-box img {
-  max-width: 100%;
-  max-height: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+.events {
+  width: 100%;
 }
