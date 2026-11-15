@@ -29,11 +29,8 @@
   <div class="column">
     <h3 class="center">Vilnius JUG Events</h3>
     <br/>
-    <div>
-	    <div class="center conf"><a href="https://conf.vilnius-jug.lt">2024, June 18 Vilnius JUG Conf</a></div>
-    </div>
 
-    <table class="center">
+    <table class="center events">
       <tr>
         <td></td>
         <td>Date</td>
@@ -42,7 +39,7 @@
       </tr>
       <tr ng-repeat="event in upcoming">
         <td>
-          <img src="icons/event_types/java.png" ng-if="event.type == 'Vilnius JUG'">
+          <img src="icons/event_types/java.png" ng-if="event.type == 'Vilnius JUG' || event.type == 'Vilnius JUG Conf'">
           <img src="icons/event_types/scala.png" ng-if="event.type == 'Vilnius Scala'">
           <img src="icons/event_types/clojure.png" ng-if="event.type == 'Vilnius Clojure'">
         </td>
@@ -53,7 +50,7 @@
 
       <tr ng-repeat="event in past">
         <td>
-          <img src="icons/event_types/java.png" ng-if="event.type == 'Vilnius JUG'">
+          <img src="icons/event_types/java.png" ng-if="event.type == 'Vilnius JUG' || event.type == 'Vilnius JUG Conf'">
           <img src="icons/event_types/scala.png" ng-if="event.type == 'Vilnius Scala'">
           <img src="icons/event_types/clojure.png" ng-if="event.type == 'Vilnius Clojure'">
         </td>
@@ -63,56 +60,12 @@
       </tr>
     </table>
   </div>
-
-  <div class="column-right">
-
-    <div class="logo-box">
-      <a href="https://www.getcujo.com">
-        <img
-          src="cujo.png"
-          alt="CUJO AI Logo">
-      </a>
-    </div>
-
-    <div class="logo-box">
-      <a href="https://platform-lunar.com/">
-        <img
-          src="pl.png"
-          alt="Platform Lunar Logo">
-      </a>
-    </div>
-
-    <div class="logo-box">
-      <a href="https://spectrocoin.com/">
-        <img
-          src="sc.png"
-          alt="Spectro Coin Logo">
-      </a>
-    </div>
-    <div class="logo-box">
-      <a href="https://www.hotelston.com/">
-        <img
-          src="logo-hston-lt-alpha.png"
-          alt="Hotelston Logo">
-      </a>
-    </div>
-    <div class="logo-box">
-      <a href="https://www.wix.com">
-        <img
-          src="https://static.parastorage.com/services/html-landing/html/hp-new-design/hp-resources/images-v-01/wixlogo.jpg"
-          alt="Wix Logo">
-      </a>
-    </div>
-    <div>
-      <h4>Other dev communities</h4>
-      <ul>
-        <li><a href="https://usergroups.lt/">User groups calendar</a></li>
-      </ul>
-    </div>
-  </div>
 </div>
 
 <div class="center">
+  <h4>Other dev communities</h4>
+  <a href="https://usergroups.lt/">User groups calendar</a>
+  <br>
   <br>
   <a
     href="mailto:&#108;&#101;&#097;&#100;&#101;&#114;&#115;&#064;&#118;&#105;&#108;&#110;&#105;&#117;&#115;&#045;&#106;&#117;&#103;&#046;&#108;&#116;">
